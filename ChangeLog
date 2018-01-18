@@ -1,3 +1,201 @@
+commit 95fdbe8337d2ff31dcfb68f35f3e4441dc27d92f
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Sun Jan 14 10:45:31 2018 +0100
+
+    Update NEWS
+
+commit 230d8c8140316f1633cb48c11870938d5784b5b7
+Author: Pierre Lamot <pierre@videolabs.io>
+Date:   Tue Jan 9 15:52:17 2018 +0100
+
+    Don't abort if PGCN or PCN == 0 when reading VTS_PTT_SRPT
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
+commit 26cc345d57a2660fe2bfdb25be099ede233d7d48
+Author: Pierre Lamot <pierre@videolabs.io>
+Date:   Tue Jan 9 15:52:16 2018 +0100
+
+    Update incomplete structures
+    
+    From the spec.
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
+commit 22f0cd7398da14b85bdb20eef81309ad30ec8da8
+Author: Pierre Lamot <pierre@videolabs.io>
+Date:   Tue Jan 9 15:52:15 2018 +0100
+
+    Don't abort if PGC structure can't be read.
+    
+    Some DVD contains unused invalids PGC (ie: inaccessible location).
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
+commit 7433fb130827ada0e09a6b123b8a1df4fdf6bb40
+Author: Pierre Lamot <pierre@videolabs.io>
+Date:   Tue Jan 9 15:52:14 2018 +0100
+
+    Provide compatibility with media having incomplete TT_SRPT and PTT_SRPT
+    
+    Some media don't provide the last byte field in  "Title Search Pointer Table"
+    (TT_SRPT) and "Video Title Set Part of Title Search Pointer Table"
+    (VST_PTT_SRPT)
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
+commit 74853950580354f0fba0e8bbae643068da9c3fb7
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Mon Jan 8 18:28:22 2018 +0100
+
+    Update NEWS for 6.0
+
+commit 5ec409508803037dfa931591aef93851458d1d2a
+Author: Lawrence D'Oliveiro <ldo@geek-central.gen.nz>
+Date:   Fri Feb 19 16:16:09 2016 +0100
+
+    Restrict Exported Symbols To Those Currently Declared In Public Includes
+    
+    The shared library currently exports the symbols “dvdinput_close”,
+    “dvdinput_open”, “dvdinput_read”, “dvdinput_seek”,
+    “dvdinput_setup” and “dvdinput_title”, even though these are not
+    currently declared in any of the public include files.
+    
+    This restricts the export-symbols-regex to stop exporting these.
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
+commit 494311d309441846eae697f915b61d2980bfa69d
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Wed Oct 14 20:49:55 2015 +0300
+
+    Remove unused dvdinput_error()
+
+commit d52ac0a705e6969862d94b94729854108b7eb4b4
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Wed Oct 14 14:03:33 2015 +0300
+
+    Remove redundant redeclaration of InternalUDFReadBlocksRaw
+
+commit 54c4660e7592e6f8e30d205b117dfc9b1e3997be
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Thu Sep 24 14:02:23 2015 +0300
+
+    dvdinput_close(): fix leak in error path
+    
+    Memory should be freed even if DVDCSS_close() or close() returns an error.
+    Error return value is only for diagnostics; those functions can't be called again.
+    => dvdinput_close() can't be called again.
+
+commit 32c6f60f29875a7ee05817ee81107bb5ca0ea7ae
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Thu Sep 24 14:01:51 2015 +0300
+
+    Use NULL when comparing pointer
+
+commit 5e2ffa4bd2f260cd68e064ada27aa21b042f8856
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Wed Sep 9 12:19:22 2015 +0200
+
+    Update NEWS
+
+commit d056043f4ba26944163c404421077ebfe3c8c60f
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Wed Sep 9 12:17:46 2015 +0200
+
+    Next major version will be 6.0.0
+    
+    Bump version to 5.90.0 for now
+
+commit 511ac9c8199d7b604d6a65193fd2777b74fad776
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Wed Sep 9 09:51:03 2015 +0200
+
+    Prepare for 5.0.4
+
+commit 105aa319b085b3eb4f67de80cb41af27e0f2fe0f
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Mon Sep 7 14:46:31 2015 +0300
+
+    configure: generate version.h
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
+commit 752bbae6bc7b517f9819d182a2e3ddca44b112d8
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Wed Sep 9 10:12:29 2015 +0300
+
+    DVDReadBytes(): Check that requested size fits in ssize_t
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
+commit 1d4a5ceef8e32659ae61fff4244d346c9f3453aa
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Wed Sep 9 10:11:16 2015 +0300
+
+    sprintf -> strcpy
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
+commit 08d1ca695b55121bb0e7e82e0fa21028196141a5
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Wed Sep 9 10:10:26 2015 +0300
+
+    Add const
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
+commit 7247a1995bf8cb33fb716eab9dd57ad2a90a083e
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Tue Sep 1 15:40:18 2015 +0200
+
+    Next version will be 5.0.4 (+ NEWS)
+
+commit 46ef934304b3a326615ae6dafc63b337f2f2628f
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Wed May 20 13:41:57 2015 +0300
+
+    Use calloc
+    
+    Remove redundant initializations to 0.
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
+commit 75c0cae2f32be6d7b076818571341dde83c1771b
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Wed May 20 13:41:38 2015 +0300
+
+    Use correct constant
+    
+    TITLES_MAX was used as length of string "/video_ts".
+    There's no relation between these two constants.
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
+commit a0b8b3e4e1e95131430149c24c75d19fb8219087
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Wed May 20 13:41:01 2015 +0300
+
+    Fix possible buffer overflow
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
+commit 2b77f469eb511b8f43e8f9b10a3b57685ec1ff3c
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Wed May 20 13:40:27 2015 +0300
+
+    Cosmetics
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
+commit 4e269e52103a0422a3954ecc2f1901dec5fb4f0d
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Sun Mar 29 22:21:31 2015 +0300
+
+    Fix write after free
+    
+    Signed-off-by: Jean-Baptiste Kempf <jb@videolan.org>
+
 commit 2b8f60f0c4efd85f17116a5443851d4bb4a288b7
 Author: Jean-Baptiste Kempf <jb@videolan.org>
 Date:   Wed Mar 25 14:55:05 2015 +0100
@@ -970,7 +1168,7 @@ Date:   Mon Nov 18 23:43:16 2013 +0000
     
     The memory is allocated in
     
-           	if((cached_dir_base = malloc(dir_lba * DVD_VIDEO_LB_LEN + 2048)) == NULL)
+            if((cached_dir_base = malloc(dir_lba * DVD_VIDEO_LB_LEN + 2048)) == NULL)
     
     and has to be freed before returning from the function.
     
