@@ -1,3 +1,72 @@
+commit a02a002ff7e4a740a740a649f466a8954c70c5a1
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Sun Sep 1 16:40:44 2019 +0200
+
+    Update NEWS about bump ABI
+
+commit 819dd78fdc10b66d04d4033557e7085cc345c094
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Sun Sep 1 16:35:32 2019 +0200
+
+    Update CI to use more modern contribs
+
+commit f95662fca27e7e2940c22110335654db46bf9c39
+Author: John Sullivan <jsgthb@kanargh.org.uk>
+Date:   Fri Aug 9 13:23:15 2019 +0100
+
+    Swap pgc_t's still_time and pg_playback_mode which are currently
+    the wrong way round, which prevents some discs from playing.
+
+commit 143d06a8770477b0e77ced898e39099883885103
+Author: Thomas Guillem <thomas@gllm.fr>
+Date:   Fri Jul 19 10:31:56 2019 +0200
+
+    use reentrant getmntent_r
+    
+    This fixes the following data-race on VLC when 2 different inputs are opening
+    at the same time:
+    
+    WARNING: ThreadSanitizer: data race (pid=15659)
+      Write of size 8 at 0x7f79148d3140 by thread T5:
+        #0 getmntent ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:3850 (libtsan.so.0+0x3d84c)
+        #1 DVDOpenCommon ../src/dvd_reader.c:548 (libdvdread.so.4+0x38b6)
+        #2 generic_start ../../src/modules/modules.c:258 (libvlccore.so.9+0x3bed5)
+        #3 module_load ../../src/modules/modules.c:122 (libvlccore.so.9+0x3be7e)
+        #4 vlc_module_load ../../src/modules/modules.c:194 (libvlccore.so.9+0x3c358)
+        #5 module_need ../../src/modules/modules.c:277 (libvlccore.so.9+0x3c60c)
+        #6 access_New ../../src/input/access.c:149 (libvlccore.so.9+0x5464c)
+        #7 stream_AccessNew ../../src/input/access.c:294 (libvlccore.so.9+0x549c1)
+        #8 InputDemuxNew ../../src/input/input.c:2413 (libvlccore.so.9+0x7528b)
+        #9 InputSourceNew ../../src/input/input.c:2556 (libvlccore.so.9+0x76c1c)
+        #10 Init ../../src/input/input.c:1257 (libvlccore.so.9+0x7b145)
+        #11 Run ../../src/input/input.c:449 (libvlccore.so.9+0x7c3fe)
+    
+      Previous write of size 8 at 0x7f79148d3140 by thread T4:
+        #0 getmntent ../../../../src/libsanitizer/sanitizer_common/sanitizer_common_interceptors.inc:3850 (libtsan.so.0+0x3d84c)
+        #1 DVDOpenCommon ../src/dvd_reader.c:548 (libdvdread.so.4+0x38b6)
+        #2 generic_start ../../src/modules/modules.c:258 (libvlccore.so.9+0x3bed5)
+        #3 module_load ../../src/modules/modules.c:122 (libvlccore.so.9+0x3be7e)
+        #4 vlc_module_load ../../src/modules/modules.c:194 (libvlccore.so.9+0x3c358)
+        #5 module_need ../../src/modules/modules.c:277 (libvlccore.so.9+0x3c60c)
+        #6 access_New ../../src/input/access.c:149 (libvlccore.so.9+0x5464c)
+        #7 stream_AccessNew ../../src/input/access.c:294 (libvlccore.so.9+0x549c1)
+        #8 InputDemuxNew ../../src/input/input.c:2413 (libvlccore.so.9+0x7528b)
+        #9 InputSourceNew ../../src/input/input.c:2556 (libvlccore.so.9+0x76c1c)
+        #10 Init ../../src/input/input.c:1257 (libvlccore.so.9+0x7b145)
+        #11 Preparse ../../src/input/input.c:475 (libvlccore.so.9+0x7c2b6)
+
+commit ebf7dab00bb106ad323b909f5d28529d2bc36637
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Fri Feb 8 17:29:33 2019 +0100
+
+    Add more files to gitignore, notably build folder
+
+commit 368cd02ecf315a4995bd78ac560823a83368c0a2
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Fri Feb 8 17:28:01 2019 +0100
+
+    Update AUTHORS
+
 commit b851de7220657aaba96d447abd2937ffd2a23490
 Author: Jean-Baptiste Kempf <jb@videolan.org>
 Date:   Tue Feb 5 16:16:13 2019 +0100
