@@ -142,7 +142,8 @@ libdvdread_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
 am__dirstamp = $(am__leading_dot)dirstamp
 am_libdvdread_la_OBJECTS = src/bitreader.lo src/dvd_input.lo \
 	src/dvd_reader.lo src/dvd_udf.lo src/ifo_print.lo \
-	src/ifo_read.lo src/md5.lo src/nav_print.lo src/nav_read.lo
+	src/ifo_read.lo src/logger.lo src/md5.lo src/nav_print.lo \
+	src/nav_read.lo
 libdvdread_la_OBJECTS = $(am_libdvdread_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -169,8 +170,9 @@ am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = src/$(DEPDIR)/bitreader.Plo \
 	src/$(DEPDIR)/dvd_input.Plo src/$(DEPDIR)/dvd_reader.Plo \
 	src/$(DEPDIR)/dvd_udf.Plo src/$(DEPDIR)/ifo_print.Plo \
-	src/$(DEPDIR)/ifo_read.Plo src/$(DEPDIR)/md5.Plo \
-	src/$(DEPDIR)/nav_print.Plo src/$(DEPDIR)/nav_read.Plo
+	src/$(DEPDIR)/ifo_read.Plo src/$(DEPDIR)/logger.Plo \
+	src/$(DEPDIR)/md5.Plo src/$(DEPDIR)/nav_print.Plo \
+	src/$(DEPDIR)/nav_read.Plo
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -389,6 +391,8 @@ libdvdread_la_SOURCES = \
 	src/dvdread_internal.h \
 	src/ifo_print.c \
 	src/ifo_read.c \
+	src/logger.c \
+	src/logger.h \
 	src/md5.c \
 	src/md5.h \
 	src/nav_print.c \
@@ -518,6 +522,7 @@ src/dvd_reader.lo: src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/dvd_udf.lo: src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/ifo_print.lo: src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/ifo_read.lo: src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
+src/logger.lo: src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/md5.lo: src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/nav_print.lo: src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
 src/nav_read.lo: src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
@@ -539,6 +544,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/dvd_udf.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ifo_print.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/ifo_read.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/logger.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/md5.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/nav_print.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/nav_read.Plo@am__quote@ # am--include-marker
@@ -926,6 +932,7 @@ distclean: distclean-am
 	-rm -f src/$(DEPDIR)/dvd_udf.Plo
 	-rm -f src/$(DEPDIR)/ifo_print.Plo
 	-rm -f src/$(DEPDIR)/ifo_read.Plo
+	-rm -f src/$(DEPDIR)/logger.Plo
 	-rm -f src/$(DEPDIR)/md5.Plo
 	-rm -f src/$(DEPDIR)/nav_print.Plo
 	-rm -f src/$(DEPDIR)/nav_read.Plo
@@ -983,6 +990,7 @@ maintainer-clean: maintainer-clean-am
 	-rm -f src/$(DEPDIR)/dvd_udf.Plo
 	-rm -f src/$(DEPDIR)/ifo_print.Plo
 	-rm -f src/$(DEPDIR)/ifo_read.Plo
+	-rm -f src/$(DEPDIR)/logger.Plo
 	-rm -f src/$(DEPDIR)/md5.Plo
 	-rm -f src/$(DEPDIR)/nav_print.Plo
 	-rm -f src/$(DEPDIR)/nav_read.Plo

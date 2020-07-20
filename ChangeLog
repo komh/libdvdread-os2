@@ -1,3 +1,195 @@
+commit a3329a79e9d44c927b84f0ab646a93d4c237ecb3
+Author: Hugo Beauzée-Luyssen <hugo@beauzee.fr>
+Date:   Fri Apr 3 14:32:35 2020 +0200
+
+    Bump version to 6.1.1
+
+commit e533d03fd99f24f69daf7d831d88ec5b95078d92
+Author: Hugo Beauzée-Luyssen <hugo@beauzee.fr>
+Date:   Wed Apr 1 18:01:16 2020 +0200
+
+    configure.ac: Fix LT_AGE following ABI breakage
+    
+    The ABI broke, so we need to reset DVDREAD_LT_AGE to 0
+    Fix #14
+
+commit 8389f224091dccacbf66d0a5207f87e0f5028ecc
+Author: Hugo Beauzée-Luyssen <hugo@beauzee.fr>
+Date:   Wed Apr 1 17:44:55 2020 +0200
+
+    CI: Fix links to docker registry
+
+commit d413571ce39acd404523b6742ba361215f6ada68
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Thu Mar 5 20:18:36 2020 +0100
+
+    Fix the arguments order for strerror_s
+
+commit 9bc33de3458560f7069257e7b429fc66f514a4fe
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Thu Mar 5 16:42:41 2020 +0100
+
+    add checks for strerror_r
+
+commit 32afabc16f3c160455b1492e7f0d3647e4acb04b
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Wed Mar 4 14:01:32 2020 +0100
+
+    Update NEWS for 6.1.0
+
+commit 42374932bebd4f9e67f8cd0db46c792038e69df1
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Wed Feb 19 16:05:16 2020 +0100
+
+    ifo_print: use logger
+
+commit 33e674e4e216b9f389edd3c41d6d90e524dedda2
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Wed Feb 19 19:36:39 2020 +0100
+
+    dvd_input: use logger
+
+commit 7ec273ddfac77a622e9fa4817525accf550d2ace
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Wed Feb 19 17:58:19 2020 +0100
+
+    dvd_udf: replace log occurrences
+
+commit 5ebbd78daaa3d1a884e6d8d8a363463fea2d57ce
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Wed Feb 19 17:44:26 2020 +0100
+
+    ifo_read: use logger
+
+commit d9cd1b5fd9ef29fbffc77604d3ba5f9eb855aa29
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Wed Feb 19 17:43:50 2020 +0100
+
+    ifo_handle: store main context in priv
+
+commit cabd80c8350bc22a9c705363565e8631ecb39234
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Wed Feb 19 16:47:28 2020 +0100
+
+    ifo_handle: create real priv data, unexpose dvd_file_t pointer
+
+commit bde28bce4302e32645bd9bc7677a04b41bec0b80
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Wed Feb 19 14:50:44 2020 +0100
+
+    dvd_reader: use logger
+
+commit 5ef1a39573c236b3dbaee27bfcf2f2fdd2867331
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Wed Feb 19 14:05:17 2020 +0100
+
+    Add internal logger functions
+
+commit c2e322aea06309a56a1464d745a25160d31fb650
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Wed Feb 19 13:10:15 2020 +0100
+
+    add logger parameters in new Open2
+
+commit 3e4519df837b39077a6369f81a5b9492920bb6ee
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Wed Feb 19 12:58:07 2020 +0100
+
+    Add new versions of DVDOpen to provide context
+
+commit 6c463b78201e2af6a5191c1d4c2272ef5711c45b
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Tue Feb 18 16:11:35 2020 +0100
+
+    flag broken IFO to load BUP instead
+    
+    Fallback isn't done for VMGI. We need to store
+    earlier IFO fallback state.
+    
+    Fixes playback with crafted/corrupted IFO
+
+commit 1a01c64cc4a3a4f913f3a46e1476ae5876619d6c
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Tue Feb 18 17:05:13 2020 +0100
+
+    Change dvd_reader_t for a real global context
+    
+    dvd_reader_t is only accessible by dvd_reader.c
+
+commit 18b176cb03a812c02e96cfe9b926bb1255a3eb62
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Tue Feb 18 13:03:17 2020 +0100
+
+    handle VMGI fallback
+
+commit 8ca9828ed1031d1e6b39cf924471655b44e17110
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Tue Feb 18 12:59:25 2020 +0100
+
+    handle VTSI fallback
+
+commit 89a5fce5a7a3ef3acc0c39fb962a7cfa7a427979
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Mon Feb 17 20:45:19 2020 +0100
+
+    ifo_read: refactor and fix BUP fallback
+
+commit 64e41a83448560374655eab9ab377dcce66e5a64
+Author: Hugo Beauzée-Luyssen <hugo@beauzee.fr>
+Date:   Tue Feb 18 15:59:23 2020 +0100
+
+    contrib: Remove pthreads
+    
+    It's not used anywhere in this project
+
+commit e7d929a2810373724633a06aaa927ec606727e8a
+Author: Hugo Beauzée-Luyssen <hugo@beauzee.fr>
+Date:   Tue Feb 18 15:56:13 2020 +0100
+
+    contrib: Remove unused timer files
+
+commit 8d7b4c1a91887037934c6bb78fb6629b41bbc3b1
+Author: Hugo Beauzée-Luyssen <hugo@beauzee.fr>
+Date:   Tue Feb 18 15:51:38 2020 +0100
+
+    contrib: Remove unused getopt
+
+commit 803106b38bdba3463a401a5de158f80d6cfd4b91
+Author: Hugo Beauzée-Luyssen <hugo@beauzee.fr>
+Date:   Tue Feb 18 15:50:28 2020 +0100
+
+    contrib: Remove unused bcopy
+
+commit 5706d4b22d30bfa89a2433b6a30b35cf1134d84d
+Author: Hugo Beauzée-Luyssen <hugo@beauzee.fr>
+Date:   Tue Feb 18 15:48:28 2020 +0100
+
+    Use _WIN32 instead of WIN32
+
+commit 6d781d2bc3445bbd2577ab85138f65c3df4ce323
+Author: Hugo Beauzée-Luyssen <hugo@beauzee.fr>
+Date:   Tue Feb 18 15:45:36 2020 +0100
+
+    Remove unused dvdnav_internal.h
+
+commit 0c59f34a308afadb3c9088ca3df6b4b865e677fa
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Thu Feb 6 22:56:40 2020 +0100
+
+    Update NEWS for 6.0.3
+
+commit 108f301a90e7abbc1c3803ffe566417d80f18a2c
+Author: François Cartegnie <fcvlcdev@free.fr>
+Date:   Thu Feb 6 22:54:12 2020 +0100
+
+    skip UDF file truncation by empty contiguous ShortAD
+
+commit da2245e4eccca4b8816ecba3d99c6c2134e3d07c
+Author: Marvin Scholz <epirat07@gmail.com>
+Date:   Thu Oct 24 14:42:55 2019 +0200
+
+    only use getmntent_r if available
+
 commit a02a002ff7e4a740a740a649f466a8954c70c5a1
 Author: Jean-Baptiste Kempf <jb@videolan.org>
 Date:   Sun Sep 1 16:40:44 2019 +0200
