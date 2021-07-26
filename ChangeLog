@@ -1,3 +1,95 @@
+commit 37e2354e016648f7c74ad48fcb5524919bb228de
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Sun Apr 18 11:49:57 2021 +0200
+
+    Update NEWS for 6.1.2
+
+commit 81407d80db03c2d2b7442d7ff89c0f4393b6931f
+Author: Jean-Baptiste Kempf <jb@videolan.org>
+Date:   Sun Apr 18 12:27:46 2021 +0200
+
+    Fix mingw build from tarballs
+    
+    Actually a work-around, tbh, but it'll take more time to fix.
+
+commit 3d8b0cbce6be3e4b6906f294d631281f4c61c96d
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Mon Apr 12 19:24:56 2021 +0300
+
+    Move win32 helpers after all includes
+
+commit 714dc2682396a41921ebe90a528b0418322a51f9
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Mon Apr 12 19:21:58 2021 +0300
+
+    win32: Fix opendir()/readdir() with non-ASCII paths
+
+commit 72cb63b88141c66968c13690e2cc85ccf938df9f
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Wed Apr 7 12:46:42 2021 +0300
+
+    win32: Fix opening of non-ASCII paths
+
+commit 2ffeb36d8a45c89101e1fbcd1a61f538ba6e44fa
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Wed Apr 7 18:47:58 2021 +0300
+
+    win32: Fix stat() with non-ASCII paths
+
+commit edadb4255063f27dbfe1559c840af2ba9e6befdc
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Sat Apr 10 18:22:38 2021 +0300
+
+    win32: add utf8 -> wchar_t conversion utility
+
+commit f56bef305b86755415200a137b7acc70889c87bf
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Wed Apr 7 18:51:15 2021 +0300
+
+    Drop unused include and define
+
+commit 939671fbd02c98244cb28df6d38a8f2b8a3e6d27
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Wed Apr 7 18:49:48 2021 +0300
+
+    Silence unused variable warning (_WIN32)
+
+commit dc1caa064e9d11944516c66a44df25f2ddef476c
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Tue Apr 6 18:06:50 2021 +0300
+
+    dlfcn: make sure path is nul-terminated after strncpy()
+
+commit 9ba15098502fb5b8fbe73ee3ab2c8bbc11763523
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Tue Apr 6 18:04:02 2021 +0300
+
+    Silence warnings
+
+commit 04d2b7f2080d2f04beed4c3c58938e6c95894ae1
+Author: Petri Hintukainen <phintuka@gmail.com>
+Date:   Thu Apr 8 00:05:16 2021 +0300
+
+    CI: no need for vlc contribs
+
+commit 227e060ca55614714a2a3f5a25ee878dd4abdfe5
+Author: Konstantin Pavlov <thresh@videolan.org>
+Date:   Thu Jan 7 21:40:38 2021 +0300
+
+    CI: Update CI to use more modern builders and contribs
+
+commit b71137c43683191084bb07e3bcaa5a5880f7acaf
+Author: Francois Cartegnie <fcvlcdev@free.fr>
+Date:   Thu May 7 16:22:26 2020 +0200
+
+    autoconf: require C99
+
+commit c2290bb4b1d31c5e6f7a65fcfcc031c3ce67fe85
+Author: Hugo Beauzée-Luyssen <hugo@beauzee.fr>
+Date:   Thu Jul 9 14:46:49 2020 +0200
+
+    CI: Fix image tags
+
 commit a3329a79e9d44c927b84f0ab646a93d4c237ecb3
 Author: Hugo Beauzée-Luyssen <hugo@beauzee.fr>
 Date:   Fri Apr 3 14:32:35 2020 +0200
